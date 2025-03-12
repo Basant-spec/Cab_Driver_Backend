@@ -2,6 +2,7 @@ package CabDriver.CabDriverBackend.models;
 
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,6 +28,7 @@ public class Customer {
     @Column(unique=true,nullable = false)
     private Long phoneNumber;
     private String address;
+  @JsonIgnore
     @OneToMany(mappedBy="customer")
     private List<Booking> bookings;
 

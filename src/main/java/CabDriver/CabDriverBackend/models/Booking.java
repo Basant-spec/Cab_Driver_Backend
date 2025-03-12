@@ -21,7 +21,9 @@ private  Integer billAmount;
  private  String status;
  private String feedback;
  @ManyToOne
- Driver driver;
+ private Driver driver;
+private String startingLocation;
+private String endingLocation;
 
 
 
