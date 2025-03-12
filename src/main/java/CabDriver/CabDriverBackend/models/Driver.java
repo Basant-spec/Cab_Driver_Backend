@@ -1,9 +1,6 @@
 package CabDriver.CabDriverBackend.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Driver {
-    @Id
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO)
    private Integer id;
     @Column(unique=true,nullable=false)
     private  String licenseID;
