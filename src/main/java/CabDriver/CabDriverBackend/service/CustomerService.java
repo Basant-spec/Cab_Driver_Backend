@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
+    public Customer getCustomerById(Integer CustomerId){
+
+        return customerRepository.findById(CustomerId).orElse(null);
+    }
     public void registerAccount(Customer customer){
 
         customerRepository.save(customer);
