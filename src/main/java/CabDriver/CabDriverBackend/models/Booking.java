@@ -1,8 +1,6 @@
 package CabDriver.CabDriverBackend.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Booking {
 @Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 private Integer id;
 @ManyToOne
 private  Customer customer;
