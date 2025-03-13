@@ -22,7 +22,7 @@ public class CustomerService {
     public String autheticateCustomer(String email,String password){
         Customer customer= customerRepository.findByEmail(email);
        if(customer==null){
-           throw new UserNotFound(String.format("User with email %s does not exist",email));
+           throw new UserNotFound(String.format("AppUser with email %s does not exist",email));
        }
         String originalPassword=customer.getPassword();
         if(originalPassword.equals(password)){
@@ -30,6 +30,13 @@ public class CustomerService {
         }
 
         return "Authentication fail";
+
+    }
+
+
+    public Customer getCustomerByEmail(String emailId){
+
+       return customerRepository.findByEmail(emailId);
 
     }
 

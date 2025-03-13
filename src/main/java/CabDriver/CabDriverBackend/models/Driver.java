@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Driver {
+public class Driver implements AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
    private Integer id;
@@ -25,10 +25,10 @@ public class Driver {
     @Column(unique=true,length=10,nullable=false)
     private   Long phoneNumber;
     @Column(unique=true,nullable=false)
-    private  String emailID;
+    private String emailID;
     private Double rating;
     private Integer totalRideServed;
-    @OneToMany(mappedBy="driver")
+    @OneToMany(mappedBy = "driver")
     private List<Booking> booking;
 
 
