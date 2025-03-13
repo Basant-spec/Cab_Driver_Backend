@@ -16,6 +16,10 @@ public class DriverService {
 
 
     }
+    public Driver getDriverByEmail(String emailId){
+
+        return driverRepository.findByEmailID(emailId);
+    }
 
 
 
